@@ -58,10 +58,12 @@ public:
 
 int main(){
 
-  int numero_partidos;
-  int escanios_a_repartir;
-  string nombre_partido;
-  long int num_votos;
+  int numero_partidos;			// Nº de partidos políticos que van a intervenir en el reparto 
+  int escanios_a_repartir;	// Nº de escaños que componen el parlamento 
+  string nombre_partido;		// String que contiene en cada iteración el nombre del partido político
+  long int num_votos;				// Nº de votos que ha recibido cada partido político en cada iteración
+
+	/* Lectura o Entrada de datos */
 
   cout << "Introduzca el número de escaños a repartir: ";
   cin >> escanios_a_repartir;
@@ -69,7 +71,7 @@ int main(){
   cout << "\n¿Cuántos partidos participan en la circunscripción? ";
   cin >> numero_partidos;
 
-	Partido partidos[numero_partidos];
+	Partido partidos[numero_partidos];	// Vector de partidos políticos
   
   for (int i = 0; i < numero_partidos; i++){
     cout << "\nIntroduzca el nombre del partido número " << i+1 << ":";
@@ -80,6 +82,8 @@ int main(){
     partidos[i] = Partido(nombre_partido, num_votos);
   }
 
+	/* Cálculo del partido lider */
+
   for (int i = 0; i < escanios_a_repartir; i++){
 
     int partidolider = 0;
@@ -89,6 +93,8 @@ int main(){
     }
     partidos[partidolider].SumaEscanio();
   }
+
+	/* Salida del estado de los partidos políticos */
 
   for (int i = 0; i < numero_partidos; i++){
     partidos[i].Imprime();
