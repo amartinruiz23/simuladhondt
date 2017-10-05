@@ -1,19 +1,20 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 class Partido{
 
-  char nombre[50];
+  string nombre;
   long int votos;
   int escanios;
 
 public:
 
-  Partido(char nomb[], long int voto){
 
-    for(int i = 0; i < 50; i++)
-      nombre[i] = nomb[i];
+  Partido(string nombre, long int voto){
+
+    this->nombre=nombre;
     votos = voto;
     escanios = 0;
 
@@ -42,7 +43,7 @@ int main(){
 
   int numero_partidos;
   int escanios_a_repartir;
-  char nombre_partido[50];
+  string nombre_partido;
   long int num_votos;
 
   cout << "Introduzca el número de escaños a repartir: ";
@@ -51,8 +52,8 @@ int main(){
   cout << "\n¿Cuántos partidos participan en la circunscripción? ";
   cin >> numero_partidos;
 
-  Partido partidos[numero_partidos];
-
+	Partido partidos[numero_partidos];
+  
   for (int i = 0; i < numero_partidos; i++){
     cout << "\nIntroduzca el nombre del partido número " << i+1 << ":";
     cin >> nombre_partido;
