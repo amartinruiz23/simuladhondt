@@ -40,10 +40,16 @@ public:
     return votos/(escanios+1);
   }
 
+	/**
+	* @brief Función que muestra por pantalla el estado de una instancia de partido político
+	*/
   void Imprime(){
     cout << nombre << " - Votos: " << votos << " Escaños: " << escanios << "\n";
   }
 
+/**
+	* @brief Función que aumenta en una unidad el número de escaños que tiene una instancia concreta de la clase Partido
+	*/
   void SumaEscanio(){
     escanios++;
   }
