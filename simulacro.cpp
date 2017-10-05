@@ -1,5 +1,5 @@
-#include <iostream>
-#include <string>
+#include <iostream>	// Para utilizar las funciones cin-cout
+#include <string> 	// Para guardar los nombres en objetos de tipo String
 
 using namespace std;
 
@@ -11,20 +11,31 @@ class Partido{
 
 public:
 
-
-  Partido(string nombre, long int voto){
+	/**
+	* @brief Constructor de instancias de partidos políticos
+	* @param nombre, nombre del partido político a crear 
+	* @param voto, cantidad de votos que ha recibido el partido 
+	*/
+  Partido(string nombre, long int votos){
 
     this->nombre=nombre;
-    votos = voto;
+    this->votos = voto;
     escanios = 0;
 
   }
 
+	/**
+	* @brief Constructor por defecto de instancias de partidos políticos
+	*/
   Partido(){
     votos=0;
     escanios=0;
   }
 
+	/**
+	* @brief Función que cálcula la fracción de votos que tiene cada partido entre sus escaños +1 (para que el denominador no se anule)
+	* @return fracción de votos entre los escaños del partido + 1  
+	*/
   long double Fraccion(){
     return votos/(escanios+1);
   }
